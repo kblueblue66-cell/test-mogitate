@@ -2,12 +2,12 @@
 
 ## 機能一覧
 
-* **商品一覧表示**: 登録されている商品をカード形式で一覧表示。
-* **商品詳細表示**: 商品の具体的な情報や、紐付いている季節を確認。
-* **商品登録機能**: 名前、価格、画像、商品説明、季節を選択して新規作成。
-* **商品編集機能**: 既存商品の情報を更新。
-* **商品削除機能**: 不要になった商品をデータベースおよびストレージ（画像）から削除。
-* **初期データ投入**: シーダーを利用した、季節・商品のデモデータ作成。
+* **商品一覧表示**
+* **商品詳細表示**
+* **商品登録機能**
+* **商品編集機能**
+* **商品削除機能**
+* **初期データ投入**
 
 ## 使用技術
 
@@ -17,5 +17,48 @@
 
 ## 環境構築
 
-1. **リポジトリのクローン**
-   * **git clone git@github.com:Estra-Coachtech/laravel-docker-template.git**
+**Dockerビルド**
+1. `git clone git@github.com:Estra-Coachtech/laravel-docker-template.git`
+2. `docker-compose up -d --build`
+> *MacのM1・M2チップのPCの場合、`no matching manifest for linux/arm64/v8 in the manifest list entries`のメッセージが表示されビルドができないことがあります。
+エラーが発生する場合は、docker-compose.ymlファイルの「mysql」内に「platform」の項目を追加で記載してください*
+``` bash
+mysql:
+    platform: linux/x86_64(この文追加)
+    image: mysql:8.0.26
+    environment:
+```
+
+**laravel環境構築**
+1. `docker-compose exec php bash`
+2. `composer install`
+3. 「.env.example」ファイルを「.env」ファイルに命名。または、新しく.envファイルを作成
+4. .envに以下の環境変数を追加
+``` text
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
+```
+5. アプリケーションキーの作成
+``` bash
+php artisan key:generate
+```
+
+6. マイグレーションの実行
+``` bash
+php artisan migrate
+```
+
+7. シーディングの実行
+``` bash
+php artisan db:seed
+```
+## ER図
+
+
+## URL
+- 開発環境：http://localhost/
+- phpMyAdmin:：http://localhost:8080/
