@@ -57,7 +57,7 @@ php artisan migrate
 php artisan db:seed
 ```
 ## ER図
-
+<img width="711" height="516" alt="Image" src="https://github.com/user-attachments/assets/397b82e7-bf12-4c4c-a8a1-f8226c31ee5c" />
 
 ## URL
 - 開発環境：http://localhost/
