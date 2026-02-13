@@ -1,0 +1,180 @@
+/* 基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+}
+
+/* ヘッダー */
+.header {
+    padding: 20px 40px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+}
+
+.header__logo {
+    color: #d4c45c;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: normal;
+    font-family: "jsMath-cmti10", "Computer Modern Serifs", "Times New Roman", Times, serif;
+}
+
+/* メインコンテナ */
+.main-container {
+    max-width: 900px;
+    /* 少し広めに設定 */
+    margin: 0 auto;
+    padding: 0 20px 100px;
+}
+
+/* パンくずリスト */
+.breadcrumb {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* 2カラムレイアウト (画像と基本情報) */
+.detail-flex-container {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.detail-left {
+    flex: 1;
+}
+
+.detail-right {
+    flex: 1;
+}
+
+/* 画像プレビュー */
+.image-preview {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* フォーム要素 */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 14px;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+.form-textarea {
+    height: 150px;
+}
+
+/* チェックボックス */
+.checkbox-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+/* 下部ボタンエリア */
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.btn-back,
+.btn-submit {
+    display: inline-block;
+    width: 180px;
+    padding: 12px 0;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-back {
+    background-color: #ddd;
+    color: #333;
+}
+
+.btn-submit {
+    background-color: #f1c40f;
+    /* 黄色 */
+    color: #333;
+}
+
+/* ゴミ箱ボタン (右下に配置) */
+.delete-form {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -45px;
+    /* 保存ボタンの列と同じ高さにするための調整 */
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #e74c3c;
+    padding: 10px;
+}
+
+.btn-delete:hover {
+    opacity: 0.7;
+}
+
+/* エラーメッセージ */
+.error-msg {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+}
